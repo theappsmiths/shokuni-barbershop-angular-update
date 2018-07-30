@@ -1,0 +1,34 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-5 col-sm-12 col-xs-12 col-md-5">
+            <form [formGroup]="loginForm" novalidate>
+                <div class="display-4 text-center mt-4 text-capitalize">{{project_title}}</div>
+                <div class="text-center mt-4 text-capitalize">Login to {{project_sub_title}}</div>
+                <div class="form-group mt-4">
+                    <input type="text" class="form-control no-border" formControlName="username" maxlength="255" autocomplete="off" placeholder="Username">
+                    <show-errors [control]="loginForm.controls.username"></show-errors>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control no-border" formControlName="password" autocomplete="off" maxlength="20" placeholder="Password">
+                    <show-errors [control]="loginForm.controls.password"></show-errors>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" formControlName="remember" class="form-check-input">
+                    <label class="form-check-label" for="exampleCheck1">Remember</label>
+
+                    <a routerLink="/forget-password" class="badge text-dark text-capitalize text-right float-right">Forget Password?</a>
+                </div>
+                <div class="text-center">
+                    <button type="submit" [disabled]="!loginForm.valid" (click)="submitLogin (loginForm)" class="btn btn-login">Sign In</button>
+                </div>
+            </form>
+            <div class="text-center mt-5">Don't have account? 
+                <span>
+                    <a routerLink="/signup" class="text-capitalize text-danger text-bold badge">Sign Up</a>
+                </span></div>
+        </div>
+        <div class="col-7 col-md-7 d-xl-block d-none d-md-block d-lg-block">
+            <img class="img-fluid ml-4" src="assets/imgs/bg.jpg"/>
+        </div>
+    </div>
+</div>

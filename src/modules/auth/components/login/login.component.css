@@ -1,0 +1,11 @@
+.no-border {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.btn-login {
+    color: #fff;
+    background-color: #131F47;
+    border-color: #131F47;
+}
