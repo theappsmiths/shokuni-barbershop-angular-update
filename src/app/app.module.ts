@@ -7,6 +7,7 @@ import { AuthModule } from '../modules/auth/auth.module';
 import { RouterModule } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SaloonModule } from '../modules/saloon/saloon.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot ([{
       path:'',
       component:AppComponent
-    }])
+    }]),
+    SaloonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,6 +22,12 @@ export class AuthService {
    */
   loginUser(values:Object):Observable <any> {
     let url = this.vars.backend_url + '/users/login';
+
+    // append required parameters for login
+    values['role'] = this.vars.user_role;
+    values['client_id'] = this.vars.client_id;
+    values['client_secret'] = this.vars.client_secret;
+    values['grant_type'] = this.vars.grant_type;
     
     // request for login
     return this._http.post (url,values).pipe(

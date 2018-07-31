@@ -13,6 +13,9 @@ export class GlobalService {
 
   public user_role:String = "barber";
   public backend_url:String = "https://api.shokunidev.co.uk/v2";
+  public client_id:number = 2;
+  public client_secret:String = "FHboWXJfzSaM3Y8AH8aWht1XAZ9DqIIHhgt8dmeJ";
+  public grant_type:String = "password";
 
   public loaderStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
