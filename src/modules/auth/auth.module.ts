@@ -13,6 +13,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { AuthService } from '../../services/auth/auth.service';
 
+import { NumberOnlyDirective } from '../../directives/numberonly/number-only.directive';
+import { TrimInputDirective } from '../../directives/trim/trim-input.directive';
+
 const route:Routes = [{
   path: 'login',
   component: LoginComponent
@@ -33,7 +36,9 @@ const route:Routes = [{
   exports: [RouterModule],
   declarations: [
     LoginComponent, 
-    ShowErrorsComponent, ForgetPasswordComponent, SignUpComponent
+    ShowErrorsComponent, ForgetPasswordComponent, SignUpComponent,
+    NumberOnlyDirective,
+    TrimInputDirective
   ],
   providers: [AuthService]
 })

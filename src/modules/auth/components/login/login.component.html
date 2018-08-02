@@ -1,15 +1,15 @@
-<div class="container mt-4">
+<div class="container">
     <div class="row">
-        <div class="col-5 col-sm-12 col-xs-12 col-md-5">
+        <div class="col-sm-12 col-md-4 m-6 p-4">
             <form [formGroup]="loginForm" novalidate>
                 <div class="display-4 text-center mt-4 text-capitalize">{{project_title}}</div>
                 <div class="text-center mt-4 text-capitalize">Login to {{project_sub_title}}</div>
                 <div class="form-group mt-4">
-                    <input type="text" class="form-control no-border" formControlName="username" maxlength="255" autocomplete="off" placeholder="Username">
+                    <input type="text" class="form-control no-border" appTrimInput required formControlName="username" maxlength="255" autocomplete="off" placeholder="Username">
                     <show-errors [control]="loginForm.controls.username"></show-errors>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control no-border" formControlName="password" autocomplete="off" maxlength="20" placeholder="Password">
+                    <input type="password" class="form-control no-border" appTrimInput required formControlName="password" autocomplete="off" maxlength="20" placeholder="Password">
                     <show-errors [control]="loginForm.controls.password"></show-errors>
                 </div>
                 <div class="form-group form-check">
@@ -25,10 +25,9 @@
             <div class="text-center mt-5">Don't have account? 
                 <span>
                     <a routerLink="/signup" class="text-capitalize text-danger text-bold badge">Sign Up</a>
-                </span></div>
+                </span>
+            </div>
         </div>
-        <div class="col-7 col-md-7 d-xl-block d-none d-md-block d-lg-block">
-            <img class="img-fluid ml-4" src="assets/imgs/bg.jpg"/>
-        </div>
+        <div class="col-md-7 d-xl-block d-none d-md-block d-lg-block login-image ml-6"></div>
     </div>
 </div>

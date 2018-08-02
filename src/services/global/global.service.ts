@@ -12,9 +12,10 @@ export class GlobalService {
   public project_sub_title:String = "barber shop";
 
   public user_role:String = "barber";
-  public backend_url:String = "https://api.shokunidev.co.uk/v2";
+  // public backend_url:String = "https://api.shokunidev.co.uk/v2";
+  public backend_url:String = "http://localhost:3000/v2";
   public client_id:number = 2;
-  public client_secret:String = "FHboWXJfzSaM3Y8AH8aWht1XAZ9DqIIHhgt8dmeJ";
+  public client_secret:String = "CDNfNv7qWnbAtFXmG1o0SE4hpwoZkvvJ2duIouyt";
   public grant_type:String = "password";
 
   public loaderStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);

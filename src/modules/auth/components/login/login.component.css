@@ -9,3 +9,17 @@
     background-color: #131F47;
     border-color: #131F47;
 }
+
+.login-image {
+    background-image: url('../../../../assets/imgs/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.m-6 {
+    margin: 4rem 1rem 4rem 1rem;
+}
+
+.ml-6 {
+    margin-left: 3rem;
+}

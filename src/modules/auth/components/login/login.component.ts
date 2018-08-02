@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
 
     // design login form attribute
     this.loginForm = new FormGroup({
-      username: new FormControl ('shokuni@mailinator.com', [Validators.required, Validators.email]),
-      password: new FormControl ('11111111', [Validators.required]),
+      username: new FormControl ('barber@email.com', [Validators.required, Validators.email]),
+      password: new FormControl ('123456', [Validators.required]),
       remember: new FormControl(null)
     });
   }
