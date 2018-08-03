@@ -18,13 +18,12 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    this.vars.loaderStatus.subscribe((val: boolean) => {
+        this.objLoaderStatus = val;
+    });
 
     // check if user already login then redirect to dashboard
 
     // else on login page
-
-    this.vars.loaderStatus.subscribe((val: boolean) => {
-        this.objLoaderStatus = val;
-    });
   }
 }

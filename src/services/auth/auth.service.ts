@@ -34,4 +34,23 @@ export class AuthService {
       catchError (this.vars.handleError)
     );
   }
+
+  /**
+   * Method to register user
+   * 
+   * @param Object {first_name: "Test", last_name: "Dev", email: "barber@email.com", password: "123456", number: "1234567890"}
+   * 
+   * @returns Observable
+   */
+  registerUser (values:Object):Observable <any> {
+    let url = this.vars.backend_url + '/users/register';
+
+    // append required parameters for login
+    values['role'] = this.vars.user_role;
+    
+    // request for login
+    return this._http.post (url, values).pipe(
+      catchError (this.vars.handleError)
+    );
+  }
 }

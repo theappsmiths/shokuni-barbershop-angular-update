@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-md-4 m-6 p-4">
+        <div class="col-sm-12 col-md-3 m-5 p-4">
             <form [formGroup]="loginForm" novalidate>
-                <div class="display-4 text-center mt-4 text-capitalize">{{project_title}}</div>
-                <div class="text-center mt-4 text-capitalize">Login to {{project_sub_title}}</div>
-                <div class="form-group mt-4">
-                    <input type="text" class="form-control no-border" appTrimInput required formControlName="username" maxlength="255" autocomplete="off" placeholder="Username">
+                <div class="display-4 text-center mt-5 font-weight-bold text-lowercase text-color-shokuni">{{project_title}}</div>
+                <div class="text-center mt-5 text-capitalize pb-4">Login to {{project_sub_title}}</div>
+                <div class="form-group mt-5">
+                    <input type="text" class="form-control no-side-border" appTrimInput required formControlName="username" maxlength="255" autocomplete="off" placeholder="Username">
                     <show-errors [control]="loginForm.controls.username"></show-errors>
                 </div>
                 <div class="form-group">
@@ -14,20 +14,20 @@
                 </div>
                 <div class="form-group form-check">
                     <input type="checkbox" formControlName="remember" class="form-check-input">
-                    <label class="form-check-label" for="exampleCheck1">Remember</label>
+                    <label class="form-check-label text-faint" for="exampleCheck1">Remember</label>
 
-                    <a routerLink="/forget-password" class="badge text-dark text-capitalize text-right float-right">Forget Password?</a>
+                    <a routerLink="/forget-password" class="label label-default text-decoration-none text-faint mt-1 text-capitalize text-right float-right">Forget Password?</a>
                 </div>
-                <div class="text-center">
-                    <button type="submit" [disabled]="!loginForm.valid" (click)="submitLogin (loginForm)" class="btn btn-login">Sign In</button>
+                <div class="text-center mt-5">
+                    <button type="submit" [disabled]="!loginForm.valid" (click)="submitLogin (loginForm)" class="btn btn-login btn-round pl-4 pr-4 pt-2 pb-2">Sign In</button>
                 </div>
             </form>
-            <div class="text-center mt-5">Don't have account? 
+            <div class="text-center text-faint mt-8">Don't have an account? 
                 <span>
-                    <a routerLink="/signup" class="text-capitalize text-danger text-bold badge">Sign Up</a>
+                    <a routerLink="/signup" class="text-capitalize text-danger text-bold">Sign Up</a>
                 </span>
             </div>
         </div>
-        <div class="col-md-7 d-xl-block d-none d-md-block d-lg-block login-image ml-6"></div>
+        <div class="col-md-8 d-xl-block d-none d-md-block d-lg-block login-image padding-bottom-100 fixed-right"></div>
     </div>
 </div>

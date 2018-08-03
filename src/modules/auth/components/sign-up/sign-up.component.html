@@ -1,43 +1,39 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-4 m-6 p-4">
-            <form [formGroup]="signupForm" novalidate>
-                <div class="display-4 text-center mt-4 text-capitalize">{{project_title}}</div>
-                <div class="text-center mt-4 text-capitalize">Register to {{project_sub_title}}</div>
-                <div class="form-group mt-4">
-                    <input type="text" class="form-control no-border" formControlName="first_name" maxlength="255" autocomplete="off" appTrimInput placeholder="First Name" required>
-                    <show-errors [control]="signupForm.controls.first_name"></show-errors>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-3 m-5 p-4">
+                <form [formGroup]="signupForm" novalidate>
+                    <div class="display-4 text-center text-capitalize font-weight-bold text-lowercase text-color-shokuni">{{project_title}}</div>
+                    <div class="text-center mt-3 text-capitalize">{{pageTitle}}</div>
+                    <div class="form-group mt-5">
+                        <input type="text" class="form-control no-border" appTrimInput required formControlName="first_name" maxlength="75" autocomplete="off" placeholder="First name">
+                        <show-errors [control]="signupForm.controls.first_name"></show-errors>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control no-border" appTrimInput required formControlName="last_name" autocomplete="off" maxlength="75" placeholder="Last name">
+                        <show-errors [control]="signupForm.controls.last_name"></show-errors>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control no-border" appTrimInput required formControlName="email" autocomplete="off" maxlength="255" placeholder="Email">
+                        <show-errors [control]="signupForm.controls.email"></show-errors>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control no-border" appTrimInput appNumberOnly required formControlName="number" autocomplete="off" maxlength="10" placeholder="Mobile number">
+                        <show-errors [control]="signupForm.controls.number"></show-errors>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control no-border" appTrimInput required formControlName="password" autocomplete="off" maxlength="20" placeholder="Password">
+                        <show-errors [control]="signupForm.controls.password"></show-errors>
+                    </div>
+                    <div class="text-center mt-5">
+                        <button type="submit" [disabled]="!signupForm.valid" (click)="submitSignup (signupForm)" class="btn btn-login btn-round pl-4 pr-4 pt-2 pb-2">Sign Up</button>
+                    </div>
+                </form>
+                <div class="text-center text-faint mt-6">Already have an account? 
+                    <span>
+                        <a routerLink="/login" class="text-capitalize text-danger text-bold">Sign In</a>
+                    </span>
                 </div>
-                <div class="form-group mt-4">
-                    <input type="text" class="form-control no-border" formControlName="last_name" maxlength="255" autocomplete="off" appTrimInput placeholder="Last name" required>
-                    <show-errors [control]="signupForm.controls.last_name"></show-errors>
-                </div>
-                <div class="form-group mt-4">
-                    <input type="text" class="form-control no-border" formControlName="email" maxlength="255" autocomplete="off" appTrimInput placeholder="Username/Email" required>
-                    <show-errors [control]="signupForm.controls.email"></show-errors>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control no-border" formControlName="number" autocomplete="off" maxlength="10" appNumberOnly appTrimInput required placeholder="Phone Number">
-                    <show-errors [control]="signupForm.controls.number"></show-errors>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control no-border" formControlName="password" autocomplete="off" maxlength="20" placeholder="Password" appTrimInput required>
-                    <show-errors [control]="signupForm.controls.password"></show-errors>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control no-border" formControlName="repassword" autocomplete="off" maxlength="20" placeholder="Retype Password" appTrimInput required>
-                    <show-errors [control]="signupForm.controls.repassword"></show-errors>
-                </div>
-                <div class="text-center">
-                    <button type="submit" [disabled]="!signupForm.valid" (click)="submitSignup (signupForm)" class="btn btn-primary">Sign Up</button>
-                </div>
-          </form>
-          <div class="text-center mt-5">Already have account?
-              <span>
-                  <a routerLink="/login" class="text-capitalize text-danger text-bold badge">Sign In</a>
-              </span>
-          </div>
-      </div>
-      <!-- <div class="col-md-7 d-xl-block d-none d-md-block d-lg-block login-image ml-6"></div> -->
-  </div>
-</div>
+            </div>
+            <div class="col-md-8 d-xl-block d-none d-md-block d-lg-block login-image padding-bottom-100 fixed-right"></div>
+        </div>
+    </div>
