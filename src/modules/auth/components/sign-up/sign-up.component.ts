@@ -24,6 +24,8 @@ export class SignUpComponent implements OnInit {
     this.project_sub_title = this.auth.vars.project_sub_title;
 
     this.signupForm = new FormGroup ({
+      first_name: new FormControl (null, [Validators.required, Validators.pattern ('^[a-z-A-Z\s]*')]),
+      last_name: new FormControl (null, [Validators.required, Validators.pattern ('^[a-z-A-Z\s]*')]),
       email: new FormControl (null, [Validators.required, Validators.email]),
       password: new FormControl (null, [Validators.required, Validators.maxLength(20)]),
       repassword: new FormControl (null, [Validators.required, Validators.maxLength(20)]),

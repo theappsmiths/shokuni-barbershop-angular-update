@@ -1,28 +1,36 @@
 <div class="container">
-  <div class="row">
-      <div class="col-sm-12 col-md-4 m-6 p-4">
-          <form [formGroup]="signupForm" novalidate>
-              <div class="display-4 text-center mt-4 text-capitalize">{{project_title}}</div>
-              <div class="text-center mt-4 text-capitalize">Login to {{project_sub_title}}</div>
-              <div class="form-group mt-4">
-                  <input type="text" class="form-control no-border" formControlName="email" maxlength="255" autocomplete="off" appTrimInput placeholder="Username/Email" required>
-                  <show-errors [control]="signupForm.controls.email"></show-errors>
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control no-border" formControlName="number" autocomplete="off" maxlength="10" appNumberOnly appTrimInput required placeholder="Phone Number">
-                  <show-errors [control]="signupForm.controls.number"></show-errors>
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control no-border" formControlName="password" autocomplete="off" maxlength="20" placeholder="Password" appTrimInput required>
-                <show-errors [control]="signupForm.controls.password"></show-errors>
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control no-border" formControlName="repassword" autocomplete="off" maxlength="20" placeholder="Retype Password" appTrimInput required>
-                <show-errors [control]="signupForm.controls.repassword"></show-errors>
-              </div>
-              <div class="text-center">
-                  <button type="submit" [disabled]="!signupForm.valid" (click)="submitSignup (signupForm)" class="btn btn-primary">Sign Up</button>
-              </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-4 m-6 p-4">
+            <form [formGroup]="signupForm" novalidate>
+                <div class="display-4 text-center mt-4 text-capitalize">{{project_title}}</div>
+                <div class="text-center mt-4 text-capitalize">Register to {{project_sub_title}}</div>
+                <div class="form-group mt-4">
+                    <input type="text" class="form-control no-border" formControlName="first_name" maxlength="255" autocomplete="off" appTrimInput placeholder="First Name" required>
+                    <show-errors [control]="signupForm.controls.first_name"></show-errors>
+                </div>
+                <div class="form-group mt-4">
+                    <input type="text" class="form-control no-border" formControlName="last_name" maxlength="255" autocomplete="off" appTrimInput placeholder="Last name" required>
+                    <show-errors [control]="signupForm.controls.last_name"></show-errors>
+                </div>
+                <div class="form-group mt-4">
+                    <input type="text" class="form-control no-border" formControlName="email" maxlength="255" autocomplete="off" appTrimInput placeholder="Username/Email" required>
+                    <show-errors [control]="signupForm.controls.email"></show-errors>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control no-border" formControlName="number" autocomplete="off" maxlength="10" appNumberOnly appTrimInput required placeholder="Phone Number">
+                    <show-errors [control]="signupForm.controls.number"></show-errors>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control no-border" formControlName="password" autocomplete="off" maxlength="20" placeholder="Password" appTrimInput required>
+                    <show-errors [control]="signupForm.controls.password"></show-errors>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control no-border" formControlName="repassword" autocomplete="off" maxlength="20" placeholder="Retype Password" appTrimInput required>
+                    <show-errors [control]="signupForm.controls.repassword"></show-errors>
+                </div>
+                <div class="text-center">
+                    <button type="submit" [disabled]="!signupForm.valid" (click)="submitSignup (signupForm)" class="btn btn-primary">Sign Up</button>
+                </div>
           </form>
           <div class="text-center mt-5">Already have account?
               <span>

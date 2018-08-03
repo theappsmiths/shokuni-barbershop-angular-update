@@ -1,24 +1,19 @@
-// import { Directive, ElementRef, ChangeDetectorRef } from '@angular/core';
-import { Directive, Input, ElementRef, HostListener } from '@angular/core';
+import { Directive, Input, HostListener } from '@angular/core';
 
 @Directive({
-  selector: 'appTrimInput',
-  // host: {'(blur)': 'onchange($event)'}
+  selector: '[appTrimInput]',
 })
 export class TrimInputDirective {
-  // constructor(private cdRef: ChangeDetectorRef, private el: ElementRef) { }
 
-  // onChange($event: any) {
-  //   let theEvent = $event || window.event;
-  //   theEvent.target.value = theEvent.target.value.trim();
-  // }
-
-  constructor (private el:ElementRef) { }
+  constructor () { }
 
   @Input() TrimField:boolean; 
 
+  /**
+   * Remove whitespace on focus out
+   * @param event 
+   */
   @HostListener ('blur', ['$event']) onblur (event) {
-    console.log (event.target.value)
     event.target.value = event.target.value.trim();
   }
 
